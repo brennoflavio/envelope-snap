@@ -1,0 +1,21 @@
+name: envelope-unofficial
+version: '0.3.11'
+summary:  An environment variables cli tool backed by SQLite 
+description: Envelope is a modern environment variables manager.
+license: MIT
+website: https://github.com/brennoflavio/envelope-snap
+confinement: strict
+base: core24
+
+parts:
+  envelope:
+    plugin: rust
+    source: https://github.com/mattrighetti/envelope.git
+    source-tag: '0.3.11'
+    source-depth: 1
+
+apps:
+  envelope:
+    command: bin/envelope
+    plugs:
+      - home
